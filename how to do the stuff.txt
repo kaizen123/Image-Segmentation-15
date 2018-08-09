@@ -1,0 +1,40 @@
+TO REMEMBER
+	do have a look at every threshold type's image database sent
+	for every thresholding type, use only the image mentioned as 'original' given in that thresholding type's image database
+
+- to read image
+mention the path in imread command of read_image.m file
+
+image = read_image();
+(if image is in rgb format, also write image = rgb2gray(image) )
+
+- to see histogram
+imhist(image)
+
+- to view image
+figure,imshow(image)
+
+1. global thresholding
+[result, count] = global_method(image);
+view result image
+count saves the count after which loop converges in the code
+
+2. global thresholding with smoothening
+[result, im_filtered] = global_method_smooth(image);
+view result image
+im_filtered saves the smoothened image
+
+3. global thresholding with sharpening
+[result, gradient, imuseful, hist] = global_method_sharp(image);
+view result image
+gradient saves gradient of the image
+imuseful saves the image and gradient product
+hist saves the histogram of imuseful
+
+4. otsu method thresholding
+result = otsu_method(image);
+view result image
+
+5. adaptive thresholding
+result = adaptive_method(image);
+view result image
